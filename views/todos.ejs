@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include("./public/head.ejs")%>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Todo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="/css/c08.css">
+    <link rel="stylesheet" href="/css/style2.css">
+  </head>
+  <body>
+  <%- include("./public/header.ejs")%>
+  <session class="main floatfix">
+    <%- include("./public/aside.ejs")%>
+    <section class="main-articles about">
+      <div class="todos-screen">
+      <div class="input-container">
+        <input class="todo-input" type="text" id="todo_input" />
+        <div id="btn" class="btn-container">
+          <img src="/img/add.png" width="60" height="60" />
+        </div>
+        
+      </div>
+
+      <div id="todos_container" class="todos-container cool-scroll-bar-17">
+        <% if (todos.length) { %>
+          <% for(var i = 0; i < todos.length; i++) {%>
+            <div id="<%= todos[i].id %>" class="todo-container <% if (todos[i].complete) { %> checked <% } %>">
+              <div class="remove">
+                <img src="/img/trashcan.png"  />
+              </div>
+
+              <div data-complete="<%= todos[i].complete %>" class="todo">
+
+                <% if (todos[i].complete) {  %>
+                <input type="checkbox" class="checkbox" checked>
+                <input type="text" value="<%= todos[i].task %>" class="textbox">
+                <% }else{ %>
+                <input type="checkbox" class="checkbox">
+                <input type="text" class="textbox" value="<%= todos[i].task %>" >
+                <% } %>
+              </div>
+            </div>
+          <% } %>
+        <% } %>
+      </div>
+      
+    </div>
+    </section>
+  </session>
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    
+    <script src="/js/main.js"></script>
+    <%- include("./public/footer.ejs")%>
+  </body>
+</html>
