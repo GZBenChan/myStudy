@@ -3,13 +3,13 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  align-items: center;
   color: #fff;
   position: fixed;
   width: 60%;
   left: 250px;
   top: 132px;
   height: 600px;
+  left: 600px;
 }
 
 .not-found-screen {
@@ -31,7 +31,7 @@
 .input-container {
   height: 60px;
   display: flex;
-  margin: 30px 30px 0px 30px;
+  margin: 30px 30px 0px 20px;
   align-items: center;
   width: 500px;
 }
@@ -40,8 +40,7 @@
   flex-grow: 1;
   font-size: 20px;
   padding: 0px 10px;
-  border: .5px;
-  height: 60px;
+  height: 50px;
 }
 
 .icon-lg {

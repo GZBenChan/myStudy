@@ -1,1 +1,0 @@
-document.getElementById("p1").innerHTML = "<strong>设置标签的html内容</strong>";
